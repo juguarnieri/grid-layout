@@ -1,0 +1,83 @@
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 5px solid black;
+    text-align: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto 1fr auto auto; 
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "section section aside"
+    "article article  aside"
+    "footer footer footer";
+    gap: 5px;
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background-color: #4d6ed7;
+    text-align: center;
+    padding: 20px;
+    border: 5px solid black;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #54bcc7;
+    text-align: center;
+    padding: 10px;
+    border: 5px solid black;
+}
+
+.section {
+    grid-area: section;
+    background-color: #f6cd31;
+    padding: 10%;
+    border: 5px solid black;
+}
+
+.aside {
+    grid-area: aside;
+    background-color:  white;
+    padding: 120px;
+    writing-mode: vertical-lr; 
+    transform: rotate(180deg); 
+    text-align: center;
+    border: 5px solid black;
+}
+
+.article {
+    grid-area: article;
+    background-color: #e7795b;
+    padding: 10%;
+    border: 5px solid black;
+}
+    
+.footer {
+    grid-area: footer;
+    background-color: #4d6ed7;
+    text-align: center;
+    padding: 20px;
+    border: 5px solid black;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "aside"
+        "article"
+        "section"
+        "footer";
+    }
+}
